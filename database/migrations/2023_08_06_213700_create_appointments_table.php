@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->integer('idClient');
-            $table->integer('idAdmin');
+            $table->integer('client_id');
             $table->string('url_meet');
             $table->dateTime('dateOfMeet');
             $table->timestamps();

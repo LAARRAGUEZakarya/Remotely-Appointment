@@ -21,6 +21,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'adress',
+        'first_name',
+        'last_name',
+        'phone',
+        'image_url'
+
     ];
 
     /**
@@ -40,6 +47,30 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            $user->first_name = strtolower($user->first_name);
+            $user->last_name = strtolower($user->last_name);
+        });
+    }
+    protected static function booted()
+    {
+        static::created(function ($user) {
+            if ($user->role === 'client') {
+                $user->client()->create();
+            }
+        });
+    }
+    public function client()
+    {
+        return $this->hasOne(client::class);
+    }
+
+
+
 }
