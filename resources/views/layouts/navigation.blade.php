@@ -19,7 +19,7 @@
         @if(Auth::user())
             
                 <li class="nav-item d-flex">
-                    <a class="nav-link" href="{{route('profile.edit')}}">Profile</a>
+                    <a class="nav-link" href="{{ route('profile.edit') }}">Profile</a>
                 </li>
 
                 <li class="nav-item d-flex ms-4">
