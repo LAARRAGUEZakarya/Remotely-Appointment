@@ -7,12 +7,12 @@
 
 
 
-@section('content') 
+@section('content')
 
-   
+
         <!-- Content section-->
-        <section class="py-5"  style="background-image: url('home_images/backAppointment.jpg')">
-            <div class="container my-5">
+        <section class="py-5 sectionhomepage-1">
+            <div class="container my-5 ">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <h2 class="text-white"></h2>
@@ -20,9 +20,9 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Content section-->
-        <section class="py-5">
+        <section class="py-5 sectionhomepage-2">
             <div class="container my-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
@@ -33,9 +33,9 @@
                 </div>
             </div>
         </section>
-       
-       
-        
+
+
+
     </body>
 </html>
 
