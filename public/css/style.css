@@ -1,0 +1,11 @@
+.sectionhomepage-1
+{
+    background-image: url('../home_images/backAppointment.jpg');
+
+}
+
+.sectionhomepage-1, .sectionhomepage-2
+{
+    height: 440px;
+}
+
