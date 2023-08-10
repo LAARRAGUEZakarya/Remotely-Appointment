@@ -28,16 +28,16 @@ Route::get('/dashboard', function () {
 
 
 Route::middleware('auth')->group(function () {
-   
+
     Route::get('/dashboard', function () {
             if (Auth::user()->role == 'client') {
-                return redirect()->intended('/client/dashboard');
-            
+                return redirect()->intended('/dashboard');
+
             } else if (Auth::user()->role == 'admin') {
-                return redirect()->intended('/admin/dashboard');
+                return redirect()->intended('/dashboard');
             }
     });
-    
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
