@@ -12,6 +12,24 @@
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
+               <!-- first name -->
+        <div>
+             <x-input-label for="first_name" :value="__('First name')" />
+             <x-text-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="first_name" />
+             <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
+        </div>
+                   <!--last Name -->
+        <div>
+            <x-input-label for="last_name" :value="__('Last name')" />
+            <x-text-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autofocus autocomplete="last_name" />
+            <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
+        </div>
+               <!-- phone -->
+        <div>
+            <x-input-label for="phone" :value="__('Phone number')" />
+            <x-text-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autofocus autocomplete="phone" />
+            <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+        </div>
 
         <!-- Email Address -->
         <div class="mt-4">
