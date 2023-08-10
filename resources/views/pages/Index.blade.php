@@ -27,8 +27,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <h2>MAKE YOUR APPOINTMENT</h2>
-                        <p class="lead">The background images used in this template are sourced from Unsplash and are open source and free to use.</p>
-                        <p class="mb-0">I can't tell you how many people say they were turned off from science because of a science teacher that completely sucked out all the inspiration and enthusiasm they had for the course.</p>
+                        <p class="lead">Any staff member should feel free to speak with me in the cafeteria or hallways, or make an appointment to come see me in my office.</p>
+                        <p class="mb-0">That's why we ask you to make an appointment in advance.</p>
                     </div>
                 </div>
             </div>
