@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class AppRepositoryProvider extends ServiceProvider
 {
     /**
      * Register any application services.
@@ -12,15 +12,16 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         
-        $services = [
-            'ClientService',
-            'AdminService',
+        $models = [
+            'User',
+            'Client',
+            'Appointment',
         ];
 
-        foreach ($services as $service) {
+        foreach ($models as $model) {
             $this->app->bind(
-                "App\Services\\{$service}\\I{$service}",
-                "App\Services\\{$service}\\{$service}"
+                "App\Repositories\\{$model}RepositoryInterface",
+                "App\Repositories\\{$model}Repository"
             );
         }
     }

@@ -17,7 +17,8 @@ class UserRepository implements UserRepositoryInterface
     }
     public function create($entity)
     {
-        $this->user->create($entity);
+       
+        return $this->user->create($entity);
     }
     public function update($id,$entity)
     {
