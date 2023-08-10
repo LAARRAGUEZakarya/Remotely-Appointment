@@ -5,12 +5,11 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class user extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +17,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+ 
         'email',
         'password',
         'last_name',
@@ -29,6 +28,25 @@ class User extends Authenticatable
         'adress',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+
+            $user->first_name = strtolower($user->first_name);
+            $user->last_name  =  strtolower($user->last_name);
+
+        });
+    }
+    protected static function booted()
+    {
+        static::created(function ($user) {
+            if ($user->role === 'client') {
+                $user->client()->create();
+            }
+        });
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -48,23 +66,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($user) {
-            $user->first_name = strtolower($user->first_name);
-            $user->last_name = strtolower($user->last_name);
-        });
-    }
-    protected static function booted()
-    {
-        static::created(function ($user) {
-            if ($user->role === 'client') {
-                $user->client()->create();
-            }
-        });
-    }
     public function client()
     {
         return $this->hasOne(client::class);

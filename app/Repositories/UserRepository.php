@@ -2,14 +2,15 @@
 
 namespace App\Repositories;
 
-use Illuminate\Foundation\Auth\User;
+use App\Models\user;
+
 
 class UserRepository implements UserRepositoryInterface
 {
     protected $user;
 
-    public function __construct(User $user) {
-        $this->user = $user;
+    public function __construct(user $user) {
+        $this->user = $user;  
     }
     public function get($id)
     {
