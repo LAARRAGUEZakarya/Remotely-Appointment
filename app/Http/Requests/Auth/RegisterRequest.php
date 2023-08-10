@@ -28,15 +28,12 @@ class RegisterRequest extends FormRequest
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => [
                 'required',
-                 'string'
-                //,
-                // Password::min(8)
-                //     ->letters()
-                //     ->numbers()
-                //     ->symbols(),
+                 'string',
+                 'min:8',
+                
             ],
             'phone' => ['required', 'numeric', 'digits:10', 'unique:users'],
-            'termes' => ['required']
+           
         ];
     }
 }

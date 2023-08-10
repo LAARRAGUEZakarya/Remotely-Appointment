@@ -40,11 +40,11 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(RegisterRequest $request): RedirectResponse
     {
      
 
-        $user = $this->clientService->create($request);
+        $user = $this->clientService->create($request->validated());
         
         event(new Registered($user));
 
