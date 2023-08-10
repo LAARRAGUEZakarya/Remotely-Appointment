@@ -25,4 +25,5 @@ class UserRepository implements UserRepositoryInterface
         $user->update($entity);
         return $user;
     }
+   
 }
