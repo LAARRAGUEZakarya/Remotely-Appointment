@@ -2,13 +2,8 @@
 
 namespace App\Http\Requests\Auth;
 
-use Illuminate\Support\Str;
-use Illuminate\Auth\Events\Lockout;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Validation\ValidationException;
 
 class RegisterRequest extends FormRequest
 {
@@ -23,7 +18,7 @@ class RegisterRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
     public function rules(): array
     {
@@ -33,20 +28,15 @@ class RegisterRequest extends FormRequest
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => [
                 'required',
-                'string',
-                Password::min(8)
-                    ->letters()
-                    ->numbers()
-                    ->symbols(),
+                 'string'
+                //,
+                // Password::min(8)
+                //     ->letters()
+                //     ->numbers()
+                //     ->symbols(),
             ],
             'phone' => ['required', 'numeric', 'digits:10', 'unique:users'],
             'termes' => ['required']
-
-           
         ];
     }
-
-   
-
-
 }
