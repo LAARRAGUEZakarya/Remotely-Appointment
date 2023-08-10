@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Services;
+namespace App\Services\ClientService;
 
 use App\Repositories\ClientRepository;
 use App\Repositories\UserRepository;
@@ -28,8 +28,10 @@ class ClientService implements IClientService
     }
     public function create($entity)
     {
+       
         $entity['role'] = 'client';
         $entity['password'] = Hash::make($entity['password']);
+       
         $user = $this->userRepository->create($entity);
 
         return $user;
