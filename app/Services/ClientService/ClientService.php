@@ -31,7 +31,8 @@ class ClientService implements IClientService
        
         $entity['role'] = 'client';
         $entity['password'] = Hash::make($entity['password']);
-       
+        //concatinate the lastname with the firstname for get the full name;
+        $entity['name'] = $entity['last_name']." ". $entity['first_name'] ;
         $user = $this->userRepository->create($entity);
 
         return $user;
