@@ -31,10 +31,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', function () {
             if (Auth::user()->role == 'client') {
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('client/dashboard');
 
             } else if (Auth::user()->role == 'admin') {
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('admin/dashboard');
             }
     });
 

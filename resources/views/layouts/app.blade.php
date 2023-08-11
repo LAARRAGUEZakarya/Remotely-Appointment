@@ -5,8 +5,15 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 <!-- Favicon-->
-                <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-               
+                <link rel="icon" type="image/x-icon" href="{{ asset('R.png') }}" />
+                
+                <title>@yield('title')</title>
+
+                {{-- Login and Register Linkers --}}
+                <link rel="stylesheet" href="{{ asset('Login_Container/fonts/material-icon/css/material-design-iconic-font.min.css')}}">
+                <link rel="stylesheet" href="{{ asset('Login_Container/css/style.css')}}">
+
+
 
                 {{-- main of css --}}
                 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -30,5 +37,8 @@
           
                 {{-- this js script it's for welcom page --}}
                 <script src="{{asset('js/main.js')}}"></script>
+
+
+              
             </body>
         </html>

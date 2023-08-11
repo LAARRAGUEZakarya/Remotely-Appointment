@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">R-Appointment</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,14 +19,14 @@
         @if(Auth::user())
             
                 <li class="nav-item d-flex">
-                    <a class="nav-link" href="{{ route('profile.edit') }}">Profile</a>
+                    <a class="nav-link btn_auths" href="{{ route('profile.edit') }}">Profile</a>
                 </li>
 
                 <li class="nav-item d-flex ms-4">
                     
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <input type="submit" class="nav-link" value="Log out">
+                        <input type="submit" class="nav-link btn_auths" value="Log out">
                     
                     </form>
                 
@@ -35,10 +35,10 @@
             
         @else
                 <li class="nav-item d-flex">
-                    <a class="nav-link" href="login">Login</a>
+                    <a class="nav-link btn_auths" href="login">Login</a>
                     </li>
                     <li class="nav-item d-flex ms-4">
-                    <a class="nav-link" href="register">Register</a>
+                    <a class="nav-link btn_auths" href="register">Register</a>
                 </li>
             
         @endif  
@@ -46,15 +46,4 @@
     </div>
   </nav>
         
-     
-     
-
-     
-                     
-
-                 
-                  
-
-
-          
-        
+ 
