@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Services\ClientService;
 
@@ -12,7 +12,7 @@ use App\Repositories\ClientRepositoryInterface;
 class ClientService implements IClientService
 {
     private $clientRepository;
-    private $userRepository;  
+    private $userRepository;
 
     public function __construct(ClientRepositoryInterface $clientRepository, UserRepositoryInterface $userRepository) {
         $this->clientRepository = $clientRepository;
@@ -28,7 +28,7 @@ class ClientService implements IClientService
     }
     public function create($entity)
     {
-       
+
         $entity['role'] = 'client';
         $entity['password'] = Hash::make($entity['password']);
         //concatinate the lastname with the firstname for get the full name;
@@ -39,12 +39,12 @@ class ClientService implements IClientService
     }
     public function update($id,$entity)
     {
-  
-      
+
+            $entity['name'] = $entity['last_name']." ". $entity['first_name'] ;
             $this->userRepository->update($id,$entity);
             return $this->clientRepository->update($id,$entity);
-        
-    
+
+
     }
     public function distroy($id)
     {
