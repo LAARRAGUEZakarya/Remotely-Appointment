@@ -2,7 +2,7 @@
 @section('title') Sign Up @endsection
 
     @section('content')
- 
+
         <!-- Sing in  Form -->
         <section class="sign-in">
             <div class="contain">
@@ -22,14 +22,15 @@
                                 @csrf
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="email" id="email" name="email" :value="old('email')" required autofocus placeholder="username" />
+                                <input type="email" id="email" name="email" :value="old('email')" required autofocus placeholder="Email" />
                             </div>
                             <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="password" required placeholder="current-password"/>
+                             <input type="password" name="password" id="password" required placeholder="Password" />
+
                             </div>
 
-                        
+
                             <div class="form-group">
                                 <input type="checkbox" name="remember"  id="remember-me" class="agree-term" />
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
@@ -56,5 +57,5 @@
                 </div>
             </div>
         </section>
-  
+
 @endsection

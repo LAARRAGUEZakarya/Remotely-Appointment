@@ -31,15 +31,15 @@ class ProfileController extends Controller
      */
     public function update(UpdateUserRequest $request): RedirectResponse
     {
-       
+
          $this->clientService->update(auth()->user()->id,$request->validated());
 
-       
+
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
-        
-      
+
+
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
@@ -48,12 +48,13 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
+        // $request->validateWithBag('userDeletion', [
+        //     'password' => ['required', 'current_password'],
+        // ]);
 
         $user = $request->user();
 
+        $this->clientService->distroy($user->client->id);
         Auth::logout();
 
         $user->delete();
