@@ -9,7 +9,7 @@
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="Login_Container/images/signin-image.jpg" alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link">Create an account</a>
+                        <a href="{{ route('register') }}" class="signup-image-link fs-5">Create an account</a>
                     </div>
 
                     <!-- Session Status -->

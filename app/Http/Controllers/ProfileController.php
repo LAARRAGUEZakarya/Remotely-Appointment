@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
+use App\Services\ClientService\ClientService;
 
 class ProfileController extends Controller
 {
+    protected $clientService;
+    public function __construct(ClientService $clientService) {
+        $this->clientService = $clientService;
+    }
     /**
      * Display the user's profile form.
      */
@@ -24,16 +29,17 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(UpdateUserRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+       
+         $this->clientService->update(auth()->user()->id,$request->validated());
 
+       
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
-
-        $request->user()->save();
-
+        
+      
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 

@@ -11,3 +11,17 @@
     color: red;
     font-weight: 700;
 }
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e3f2fd;
+}
+
+.card {
+    margin-top: 110px;
+    align-items: center;
+    align-content: center;
+}

@@ -49,7 +49,7 @@
                     </div>
                     <div class="signup-image">
                         <figure><img src="Login_Container/images/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="{{ route('login') }}" class="signup-image-link">I am already member</a>
+                        <a href="{{ route('login') }}" class="signup-image-link fs-5">I am already member</a>
                     </div>
                 </div>
             </div>

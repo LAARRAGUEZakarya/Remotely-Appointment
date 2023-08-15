@@ -1,4 +1,4 @@
  <!-- Footer-->
- <footer class="py-5 bg-dark">
-    <div class="container py-2"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+<footer class="py-1 " id="footer" >
+    <div class="container"><p class="m-0 text-center ">Copyright &copy; Your Website 2023</p></div>
 </footer>

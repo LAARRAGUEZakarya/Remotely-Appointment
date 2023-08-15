@@ -39,11 +39,12 @@ class ClientService implements IClientService
     }
     public function update($id,$entity)
     {
+  
       
             $this->userRepository->update($id,$entity);
             return $this->clientRepository->update($id,$entity);
         
-
+    
     }
     public function distroy($id)
     {
