@@ -11,8 +11,7 @@
     window.Toast = Swal.mixin({
         toast: true,
         position: 'top-start',
-        background:'#09AF09',
-        color:'white',
+
         iconColor: 'white',
         customClass: {
             popup: 'colored-toast'
@@ -30,6 +29,8 @@
     <script>
         window.Toast.fire({
             icon: "success",
+            background:'#09AF09',
+            color:'white',
             text: "{!! session()->get('success') !!}",
         });
     </script>
@@ -38,6 +39,8 @@
 @if (session()->has('error'))
     <script>
         window.Toast.fire({
+            background:'#FF0F0F',
+            color:'white',
             icon: "error",
             text: "{!! session()->get('error') !!}",
         });
@@ -46,6 +49,8 @@
 @if (count($errors) > 0)
     <script type="text/javascript">
         window.Toast.fire({
+            background:'#FF0F0F',
+            color:'white',
             icon: 'error',
             text: "{!! __('alerts.error.something_went_wrong') !!}",
         })

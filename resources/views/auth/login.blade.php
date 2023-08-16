@@ -18,24 +18,17 @@
 
                         <form method="POST" class="register-form" id="login-form" action="{{ route('login') }}">
                                 @csrf
+
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="email" id="email" name="email" :value="old('email')" required autofocus placeholder="Email" />
-                                
-                                @error('email')
-                                <small class="text-danger">
-                                     <span>{{ $message }}</span>
-                                </small>
-                                  @enderror
+
+
                             </div>
                             <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
                              <input type="password" name="password" id="password" required placeholder="Password" />
-                                 @error('password')
-                                         <small class="text-danger">
-                                              <span>{{ $message }}</span>
-                                         </small>
-                                  @enderror
+
                             </div>
 
 
@@ -45,8 +38,13 @@
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Sign in"/>
-                            </div>
 
+                            </div>
+                            @error('LoginError')
+                            <small class="text-danger">
+                                <span>{{ $message }}</span>
+                            </small>
+                              @enderror
                              {{-- @if (Route::has('password.request'))
                                 <a href="{{ route('password.request') }}">
                                     {{ __('Forgot your password?') }}
