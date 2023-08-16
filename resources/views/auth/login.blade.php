@@ -12,8 +12,6 @@
                         <a href="{{ route('register') }}" class="signup-image-link fs-5">Create an account</a>
                     </div>
 
-                    <!-- Session Status -->
-                    <x-auth-session-status class="mb-4" :status="session('status')" />
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign In</h2>
@@ -23,11 +21,21 @@
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="email" id="email" name="email" :value="old('email')" required autofocus placeholder="Email" />
+                                
+                                @error('email')
+                                <small class="text-danger">
+                                     <span>{{ $message }}</span>
+                                </small>
+                                  @enderror
                             </div>
                             <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
                              <input type="password" name="password" id="password" required placeholder="Password" />
-
+                                 @error('password')
+                                         <small class="text-danger">
+                                              <span>{{ $message }}</span>
+                                         </small>
+                                  @enderror
                             </div>
 
 
@@ -36,7 +44,7 @@
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Sign in"/>
                             </div>
 
                              {{-- @if (Route::has('password.request'))
