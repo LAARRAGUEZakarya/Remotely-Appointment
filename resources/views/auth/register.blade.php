@@ -1,6 +1,6 @@
 
     @extends('layouts.app')
-    @section('title') Sign In @endsection
+    @section('title') Sign Up @endsection
     
     @section('content')
    

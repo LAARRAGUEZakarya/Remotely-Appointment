@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title') Sign Up @endsection
+@section('title') Sign In @endsection
 
     @section('content')
 
@@ -16,7 +16,7 @@
                     <x-auth-session-status class="mb-4" :status="session('status')" />
 
                     <div class="signin-form">
-                        <h2 class="form-title">Sign up</h2>
+                        <h2 class="form-title">Sign In</h2>
 
                         <form method="POST" class="register-form" id="login-form" action="{{ route('login') }}">
                                 @csrf
