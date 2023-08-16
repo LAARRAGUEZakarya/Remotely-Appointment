@@ -26,5 +26,4 @@
 @include('profile.partial.delete')
 
 
-
 @endsection

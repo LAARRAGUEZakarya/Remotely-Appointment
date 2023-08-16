@@ -35,10 +35,7 @@
             
         @else
                 <li class="nav-item d-flex">
-                    <a class="nav-link " href="login">Login</a>
-                    </li>
-                    <li class="nav-item d-flex ms-4">
-                    <a class="nav-link " href="register">Register</a>
+                    <a class="nav-link " href="login">Sign in</a>
                 </li>
             
         @endif  
