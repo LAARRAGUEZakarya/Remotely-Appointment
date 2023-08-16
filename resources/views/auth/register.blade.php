@@ -17,7 +17,7 @@
                                 <input id="first_name" type="text" name="first_name" :value="old('first_name')" required autofocus placeholder="First Name" />
                             </div>
                             <div class="form-group">
-                                <label for="last_name"><i class="zmdi zmdi-account"></i></label>
+                                <label for="last_name"><i class="zmdi zmdi-account-o"></i></label>
                                 <input id="last_name" type="text" name="last_name" :value="old('last_name')" required autofocus placeholder="Last Name" />
                             </div>
                             <div class="form-group">
@@ -25,8 +25,12 @@
                                 <input id="phone" type="text" name="phone" :value="old('phone')" required autofocus placeholder="Phone Number" />
                             </div>
                             <div class="form-group">
+                                <label for="adress"><i class="zmdi zmdi-pin"></i></label>
+                                <input id="adress" type="text" name="adress" :value="old('adress')" required autofocus placeholder="Address" />
+                            </div>
+                            <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input id="email" type="email" name="email" :value="old('email')" required placeholder="email"/>
+                                <input id="email" type="email" name="email" :value="old('email')" required placeholder="Email"/>
                             </div>
                             <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
