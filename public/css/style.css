@@ -23,11 +23,13 @@
 .card {
     margin-top: 110px;
     align-items: center;
-
 }
 
-.card img
-{
-  height: 130px;
-  width: 135px;
+.card img {
+    height: 130px;
+    width: 135px;
+}
+
+#sections {
+    margin-top: 55px;
 }
