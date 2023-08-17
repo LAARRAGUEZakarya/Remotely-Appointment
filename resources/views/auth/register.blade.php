@@ -16,67 +16,89 @@
                                 <label for="first_name"><i class="zmdi zmdi-account"></i></label>
                                 <input id="first_name" type="text" name="first_name" :value="old('first_name')" required autofocus placeholder="First Name" />
 
-                                @error('LoginError')
-                                <small class="text-danger">
-                                    <span>{{ $message }}</span>
-                                </small>
-                                  @enderror
                             </div>
+                            
+                            @error('first_name')
+                            <small class="text-danger">
+                                <span>{{ $message }}</span>
+                            </small>
+                              @enderror
+
+                              
                             <div class="form-group">
                                 <label for="last_name"><i class="zmdi zmdi-account-o"></i></label>
                                 <input id="last_name" type="text" name="last_name" :value="old('last_name')" required autofocus placeholder="Last Name" />
-                                @error('LoginError')
-                                <small class="text-danger">
-                                    <span>{{ $message }}</span>
-                                </small>
-                                  @enderror
+                              
                             </div>
+                            @error('last_name')
+                            <small class="text-danger">
+                                <span>{{ $message }}</span>
+                            </small>
+                              @enderror
+
+
                             <div class="form-group">
                                 <label for="phone"><i class="zmdi zmdi-phone"></i></label>
                                 <input id="phone" type="text" name="phone" :value="old('phone')" required autofocus placeholder="Phone Number" />
-                                @error('LoginError')
-                                <small class="text-danger">
-                                    <span>{{ $message }}</span>
-                                </small>
-                                  @enderror
+                              
                             </div>
+                            @error('phone')
+                            <small class="text-danger">
+                                <span>{{ $message }}</span>
+                            </small>
+                              @enderror
+
+
                             <div class="form-group">
                                 <label for="adress"><i class="zmdi zmdi-pin"></i></label>
                                 <input id="adress" type="text" name="adress" :value="old('adress')" required autofocus placeholder="Address" />
-                                @error('LoginError')
-                                <small class="text-danger">
-                                    <span>{{ $message }}</span>
-                                </small>
-                                  @enderror
+                               
                             </div>
+                            @error('adress')
+                            <small class="text-danger">
+                                <span>{{ $message }}</span>
+                            </small>
+                              @enderror
+
+
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input id="email" type="email" name="email" :value="old('email')" required placeholder="Email"/>
-                                  @error('LoginError')
-                                <small class="text-danger">
-                                    <span>{{ $message }}</span>
-                                </small>
-                                  @enderror
+                               
                             </div>
+                            @error('email')
+                            <small class="text-danger">
+                                <span>{{ $message }}</span>
+                            </small>
+                              @enderror
+
+
                             <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
                                 <input id="password" type="password" name="password"required placeholder="new password"/>
-                                @error('LoginError')
-                                <small class="text-danger">
-                                    <span>{{ $message }}</span>
-                                </small>
-                                  @enderror
+                            
                             </div>
+                            @error('password')
+                            <small class="text-danger">
+                                <span>{{ $message }}</span>
+                            </small>
+                              @enderror
+
+
                             <div class="form-group">
                                 <label  for="password_confirmation"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input id="password_confirmation"  type="password"
                                           name="password_confirmation" required placeholder="new password"/>
-                                          @error('LoginError')
-                                          <small class="text-danger">
-                                              <span>{{ $message }}</span>
-                                          </small>
-                                            @enderror
+                                        
                             </div>
+
+                            @error('password_confirmation')
+                            <small class="text-danger">
+                                <span>{{ $message }}</span>
+                            </small>
+                              @enderror
+
+                              
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>

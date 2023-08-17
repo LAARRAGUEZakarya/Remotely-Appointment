@@ -29,10 +29,10 @@ class RegisterRequest extends FormRequest
             'password' => [
                 'required',
                  'string',
-                 'min:8',
-                
+                 'min:4',
             ],
             'phone' => ['required', 'numeric', 'digits:10', 'unique:users'],
+            'adress' => ['string','max:255']
            
         ];
     }

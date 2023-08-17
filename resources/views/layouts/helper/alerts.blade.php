@@ -52,7 +52,7 @@
             background:'#FF0F0F',
             color:'white',
             icon: 'error',
-            text: "{!! __('alerts.error.something_went_wrong') !!}",
+            text: "Something went wrong",
         })
     </script>
 @endif
