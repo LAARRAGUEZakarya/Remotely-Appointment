@@ -9,7 +9,7 @@
 
 
       <div class="card text-center ">
-        <img class="card-img-top" src="{{asset($user->image_url)}}" alt="Card image cap">
+        <img class="card-img-top" src="{{asset($user->image_url)}}" alt="User's image">
         <div class="card-body">
           <h5 class="card-title">Personnal information :</h5>
           <p class="card-text"> MR {{$user->name}} <br> Number phone is : {{$user->phone}}<br>Adress is {{$user->adress?$user->adress:'There is no adress'}}</p>

@@ -41,6 +41,7 @@ class ClientService implements IClientService
     {
 
             $entity['name'] = $entity['last_name']." ". $entity['first_name'] ;
+            
             $this->userRepository->update($id,$entity);
             return $this->clientRepository->update($id,$entity);
 

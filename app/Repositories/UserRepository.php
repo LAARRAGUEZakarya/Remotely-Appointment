@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\user;
+use Illuminate\Support\Facades\Storage;
 
 
 class UserRepository implements UserRepositoryInterface
@@ -24,6 +25,14 @@ class UserRepository implements UserRepositoryInterface
     public function update($id,$entity)
     {
         $user = $this->user->find($id);
+      
+        if (isset($entity['image_url'])) {
+            if(isset($user->image_url))
+            {
+                Storage::delete($user->image_url);
+            }
+          
+        }
         $user->update($entity);
         return $user;
     }

@@ -2,8 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Models\client;
 use App\Models\User;
+use App\Models\client;
+use Illuminate\Support\Facades\Storage;
 
 class ClientRepository implements ClientRepositoryInterface{
 
@@ -41,9 +42,17 @@ class ClientRepository implements ClientRepositoryInterface{
         ->first()
         ->update($entity);
     }
+
+
     public function distroy($id)
     {
         $client = $this->get($id);
+     
+            if(isset($client->image_url))
+            {
+                Storage::delete($client->image_url);
+            }
+       
         $this->user->destroy($client->user_id);
 
     }
